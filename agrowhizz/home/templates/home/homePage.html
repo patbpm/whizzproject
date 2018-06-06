@@ -1,0 +1,49 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Specialiste in Food Safety, Food Quality and Food Innovation">
+    <meta name="author" content="Patrick Bope">
+    <title>Agro-Whizz | Welcome</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'font/font-awesome.min.css' %}">
+    <link rel="icon" href= "{% static 'imgs/AWLogo.jpg' %}" type="image/gif" sizes="24x24">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+        <header>
+                <div class="topnav">
+                  <div id="topnavright">
+                      <ul>
+                        <li>Facebook</li>
+                        <li><a href="https://twitter.com/AgroWhizz" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li>Contact</li>
+                        <li><input type="text" placeholder="Search.."><button type="submit" class="searchButton"><i class="fa fa-search"></i></button></li>
+                        <li><a href="login.html"><button type="submit" >Login/Register</button></a></li>
+                      </ul>
+                  </div>
+                  <div id="topnavleft">
+                    <ul>
+                      <li><i class="fa fa-phone"></i>+27 717628603</li>
+                      <li><i class="fa fa-envelope"></i> info@agrowhizz.com</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="container">
+                    
+                    <div id="branding">
+                      <h1> <span class="highlight"><img src="{% static 'imgs/AWLogo.jpg' %}" alt="Logo" height="50" width="50"></span> <span id="agro">Agro</span><span id="whizz">Whizz</span></h1>
+                    </div>
+                    <nav>
+                      <ul>
+                        <li class="current"><a href="/">Home</a></li>
+                        <li><a href="blog/post_list.html">BLOG</a></li>
+                        <li id="whatweserve"><a href="whatweserve.html">What We Serve</a></li>                  
+                        <li><a href="whatwedo.html">Who We Do</a></li>
+                        <li><a href="contactus.html">Contact US</a></li>                
+                      </ul>
+                    </nav>
+                  </div>
+            </header>
+  </body>
