@@ -1,0 +1,140 @@
+/* homePage Showcase */
+
+#showcase {
+    min-height: 400px;
+    background:url('/assets/imgs/Headerimg2.jpg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+  
+#showcase p{
+    font-size: 20px;
+}
+
+/* HomePage subscription Newsletter */
+#newsletter{
+    padding: 10px;
+    color: #ffffff;
+    background: #2e4436;
+  }
+  
+  #newsletter h1{
+    float: left;
+  }
+  
+  #newsletter form{
+    float: right;
+    margin-top: 15px;
+  }
+  
+  #newsletter input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+  }
+  
+  .button_1{
+    height: 38px;
+    background: #cccccc;
+    border: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #353637;
+  }
+
+  /* HomePage Boxes  (services)*/
+  #boxes{
+      margin-top: 20px;
+  }
+
+  #boxes .box{
+      float: left;
+      text-align: center;
+      width: 30%;
+      padding: 10px;
+      margin-top: 20px;
+      min-height: 400px;
+  }
+
+  /* resourses */
+
+#resources{
+    margin-top: 20px;
+    min-height: 400px;
+    background:url('/imgs/resourcesimg1.jpg') no-repeat center;
+    background-size: cover;
+    text-align: center;
+    color: #0a0a0a;
+}
+
+#resources .box{
+    float: left;
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+}
+
+.button_2{
+  height: 60px;
+  background: rgb(9, 9, 247);
+  border: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #f1f1f5;
+
+}
+
+.button_2:hover {
+  height: 60px;
+  background: rgb(9, 247, 100);
+  border: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #f1f1f5;
+
+
+}
+
+
+@media(max-width: 768px){
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box {
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+    #resources .box {
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    #showcase h1{
+        margin-top: 40px;
+    }
+    
+    #newsletter button {
+        display: block;
+        width: 100%;
+    }
+    
+    #newsletter form input[type="email"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    #newsletter form input[type="email"],
+    .contact input,
+    .contact textarea,
+    .contact label{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
