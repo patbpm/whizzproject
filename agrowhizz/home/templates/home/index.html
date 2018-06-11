@@ -7,13 +7,14 @@
     <meta name="description" content="Specialiste in Food Safety, Food Quality and Food Innovation">
     <meta name="author" content="Patrick Bope">
     <title>Agro-Whizz | Welcome</title>
-    <link rel="stylesheet" href="{% static 'css/home/index.css' %}">
-    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="icon" href= "{% static 'imgs/home/AWLogo.jpg' %}" type="image/gif" sizes="24x24">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/home/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home/home.css' %}">
+    
   </head>
   <body>
     <header>
@@ -39,7 +40,7 @@
             <div id="branding">
               <h1> <span class="highlight"><img src="{% static 'imgs/home/AWLogo.jpg' %}" alt="Logo" height="50" width="50"></span> <span id="agro">Agro</span><span id="whizz">Whizz</span></h1>
             </div>
-            <nav>
+            <div id="nav">
               <ul>
                 <li class="current"><a href="/">Home</a></li>
                 <li><a href="blog/post_list.html">BLOG</a></li>
@@ -47,7 +48,7 @@
                 <li><a href="whatwedo.html">Who We Do</a></li>
                 <li><a href="contactus.html">Contact US</a></li>                
               </ul>
-            </nav>
+            </div>
         </div>
     </header>
     

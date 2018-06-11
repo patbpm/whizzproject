@@ -75,7 +75,7 @@ header #branding h1{
   margin: 0;
 }
 
-header nav{
+header #nav{
   float: right;
   margin-top: 10px;
 }
