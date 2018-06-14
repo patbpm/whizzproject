@@ -38,13 +38,13 @@
         <div class="container">
             
             <div id="branding">
-              <h1> <span class="highlight"><img src="{% static 'imgs/home/AWLogo.jpg' %}" alt="Logo" height="50" width="50"></span> <span id="agro">Agro</span><span id="whizz">Whizz</span></h1>
+              <h1> <span class="highlight img-fluid"><img src="{% static 'imgs/home/AWLogo.jpg' %}" alt="Logo" height="50" width="50" ></span> <span id="agro">Agro</span><span id="whizz">Whizz</span></h1>
             </div>
             <div id="nav">
               <ul>
                 <li class="current"><a href="/">Home</a></li>
                 <li><a href= {% url 'blog'%}>BLOG</a></li>
-                <li id="whatweserve"><a href="whatweserve.html">What We Serve</a></li>                  
+                <li><a href={% url 'whatWeServe'%}>What We Serve</a></li>                  
                 <li><a href= {% url 'whatWeDo'%}>What We Do</a></li>
                 <li><a href="contactus.html">Contact US</a></li>                
               </ul>

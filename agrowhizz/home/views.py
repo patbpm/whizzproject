@@ -7,3 +7,6 @@ def homePage(request):
 
 def whatWeDo(request):
     return render(request, 'home/whatWeDo.html', {})
+
+def whatWeServe(request):
+    return render(request, 'home/asideLayout.html', {})
