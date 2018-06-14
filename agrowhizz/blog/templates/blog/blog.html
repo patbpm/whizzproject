@@ -7,7 +7,7 @@
             <div class="col s6 m12">
                 <div class="card center-align z-depth-5">
                     <div>
-                        <h1 class="card-title"><a href="">{{ post.title }}</a></h1>
+                        <h1 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
                         <p>By  {{ post.author }}</p>
                         <p>published: {{ post.published_date }}</p>
                         <p class="card-content truncate left-align">{{ post.text|linebreaksbr }}</p>
