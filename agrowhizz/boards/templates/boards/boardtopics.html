@@ -1,0 +1,13 @@
+{% extends 'home/asideLayout.html' %}
+{% block title %}
+{{ block.super }}/{{ board.name }} 
+{% endblock %}
+{% block sidebar %}
+
+<div class="container">
+    <ol class="breadcrumb my-4">
+      <li class="breadcrumb-item"><a href="{% url 'boards' %}">Boards</a></li>
+      <li class="breadcrumb-item active">{{ board.name }}</li>
+    </ol>
+</div>
+{% endblock %}
