@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render,redirect, get_object_or_404
 from .forms import NewTopicForm
@@ -17,7 +18,7 @@ def board_topics(request, pk):
         'board': board
     }
     return render(request, 'boards/boardtopics.html', context)
-
+@login_required
 def new_topic(request, pk):
     board = get_object_or_404(Board, pk=pk)
     user = User.objects.first()  # TODO: get the currently logged in user
