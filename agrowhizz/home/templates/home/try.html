@@ -1,0 +1,97 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en"git status
+>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Specialiste in Food Safety, Food Quality and Food Innovation">
+    <meta name="author" content="Patrick Bope">
+    <title>{% block title %} Agro-Whizz | Welcome {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="icon" href= "{% static 'imgs/home/AWLogo.jpg' %}" type="image/gif" sizes="24x24">
+    <link rel="stylesheet" href="{% static 'css/home/index.css' %}">
+  
+  </head>
+  <body>
+    <header>
+      
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-sm">
+            One of three columns
+          </div>
+          <div class="col-sm">
+            One of three columns
+          </div>
+        </div>
+      </div>  
+      
+          
+          <div id="topnavleft">
+            <ul>
+              <li><i class="fas fa-address-book"></i>+27 717628603</li>
+              <li><i class="fa fa-envelope"></i> info@agrowhizz.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container">
+            
+            <div id="branding">
+              <h1> <span class="highlight img-fluid"><img src="{% static 'imgs/home/AWLogo.jpg' %}" alt="Logo" height="50" width="50" ></span> <span id="agro">Agro</span><span id="whizz">Whizz</span></h1>
+            </div>
+            <div id="nav">
+              <ul>
+                <li class="current"><a href="/">Home</a></li>
+                <li><a href= {% url 'blog'%}>BLOG</a></li>
+                <li><a href={% url 'whatWeServe'%}>What We Serve</a></li>                  
+                <li><a href= {% url 'whatWeDo'%}>What We Do</a></li>
+                <li><a href={% url 'boards'%}>Discussion Board</a></li>                
+              </ul>
+            </div>
+        </div>
+       
+    </header>
+    
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+      <section id="footer_1">
+          <div class="footinfo">
+            <h3>Head Office</h3>
+            <p>58 batts road Wynberg capetown 7800</p>
+            <p>Email: <a href = "mailto: info@agrowhizz.com"> info@agrowhizz.com</a></p>
+            <p>Phone <a href="tel:+27717628603">+27 71 762 8603 </a> 
+            <p>Facebook</p>
+            <p>Twitter</p>
+
+          </div>
+          <div class="footinfo">
+              <h3>Quick Links</h3>
+              <p>58 batts road Wynberg capetown 7800</p>
+              <p>Email: <a href = "mailto: info@agrowhizz.com"> info@agrowhizz.com</a></p>
+              <p>Phone <a href="tel:+27717628603">+27 71 762 8603 </a> 
+                
+          </div>
+          <div class="footinfo">
+              <h3>Industry Topics</h3>
+              <p>58 batts road Wynberg capetown 7800</p>
+              <p>Email: <a href = "mailto: info@agrowhizz.com"> info@agrowhizz.com</a></p>
+              <p>Phone <a href="tel:+27717628603">+27 71 762 8603 </a> 
+                
+          </div>
+      </section>
+      <div id="footer_2">
+        <div class="footbottom">
+            <p>Copyright &copy; 2017 Agro-Whizz. <a href="privacy.html">Privacy Policy</a>/<a href="terms.html">Terms of Use</a>/<a href="sitemap.html">Sitemap</a> </p>
+        </div>
+      </div>
+      
+  </footer>
+  <script src="{% static 'js/home/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/home/popper.min.js' %}"></script>
+  <script src="{% static 'js/home/bootstrap.min.js' %}"></script>
+            
+  </body>
