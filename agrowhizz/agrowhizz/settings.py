@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'blog',
     'boards',
     'accounts',
+    'agrodata',
 ]
 
 MIDDLEWARE = [

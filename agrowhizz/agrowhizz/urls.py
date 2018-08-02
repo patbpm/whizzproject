@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^boards/', include('boards.urls')),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^agrodata/', include('agrodata.urls')),
 ]
