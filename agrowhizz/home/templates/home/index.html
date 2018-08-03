@@ -10,7 +10,9 @@
     <title>{% block title %} Agro-Whizz | Welcome {% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="css/bootstrap-form-helpers.min.css" rel="stylesheet" media="screen">
     <link rel="icon" href= "{% static 'imgs/home/AWLogo.jpg' %}" type="image/gif" sizes="24x24">
+    <link rel="stylesheet" href="{% static 'css/home/bootstrap-formhelpers.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/home/index.css' %}">
   
   </head>
@@ -29,8 +31,15 @@
             <li class="nav-item">
               <a class="nav-link" href={% url 'blog'%}>BLOG</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href={% url 'whatWeServe'%}>WHAT WE SERVE</a>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle" href={% url 'whatWeServe'%} id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                WHAT WE SERVE
+              </a>
+              <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href={% url 'agrodata'%}>Database</a>
+                <a class="dropdown-item" href="#">Training</a>
+                <a class="dropdown-item" href="#">Consulting</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href={% url 'whatWeDo'%}>WHAT WE DO</a>
@@ -196,6 +205,7 @@
   <script src="{% static 'js/home/jquery-3.3.1.min.js' %}"></script>
   <script src="{% static 'js/home/popper.min.js' %}"></script>
   <script src="{% static 'js/home/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/home/bootstrap-formhelpers.min.js' %}"></script>
   <script>
       Holder.addTheme('thumb', {
         bg: '#55595c',

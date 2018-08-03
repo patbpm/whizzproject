@@ -1,0 +1,74 @@
+{% extends 'home/index.html' %}
+{% block content %}
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Agro Whizz Database</h1>
+    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+    <p>
+      <a href="#" class="btn btn-primary my-2">Main call to action</a>
+      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+    </p>
+  </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <form>
+                                    
+                    <div class="form-group"> <!-- Country field -->
+                        <label class="control-label " for="name">Country Name</label>
+                        <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group"> <!-- Email field -->
+                        <label class="control-label requiredField" for="email">State/Province</label>
+                        <div class="bfh-selectbox bfh-states" data-country="US" data-state="CA">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group"> <!-- Subject field -->
+                        <label class="control-label " for="subject">Subject</label>
+                        <input class="form-control" id="subject" name="subject" type="text"/>
+                    </div>
+                    
+                    <div class="form-group"> <!-- Message field -->
+                        <label class="control-label " for="message">Message</label>
+                        <textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+                    </div>
+                        
+                </form>	
+            </div>
+            <div class="col-12 col-sm-8"> 
+                <h1><strong>About</strong></h1>
+                <p>Agro-Whizz is a food consultancy  that focuses on promoting food safety, food quality and food innovation in Africa</p> 
+                
+                <p>Agro-Whizz is founded by Mr. Patrick Bope and who has been in the food industry since 2013.</p> 
+                
+                <p>The Vision of Agro-Whizz is to help food industry, restaurant and food handlers to produce a higher safe and quality product. Agro-Whizz use proven techniques and knowledge to help is customers to produce higher quality and safe products that will in turn increase the product value on the market.</p> 
+                
+                <p>By understanding the entire food manufacturing process, Agro-Whizz will help optimize all procedures – saving hundreds of percentages in losses and adding to the total profitability of your company.</p> 
+                
+                <h1><strong>How we started</strong></h1>
+        
+                <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
+                
+                <p>Knowledge is the key to success - and the Food Safety Network was created as a result of an ever increasing demand for food safety information within the food industry.
+                
+                Our website is the core of our business, acting as a knowledge bank for industry and consumer alike, where they can access information and resources, register for food safety training, advertise their services and keep updated with pertinent food news.  We want our passion for food safety to be contagious, so that we can encourage all those in the industry to build a food safety culture within their company.
+                
+                We are more than just a local business – we network with fellow professionals across the globe, to learn from them and to ensure that we are abreast of current food safety issues and worldwide industry trends.</p> 
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
