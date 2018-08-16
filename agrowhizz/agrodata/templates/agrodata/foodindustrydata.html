@@ -49,14 +49,11 @@
                 </form>	
             </div>
             <div class="col-12 col-sm-8"> 
-                <h1><strong>About</strong></h1>
-                <p>Agro-Whizz is a food consultancy  that focuses on promoting food safety, food quality and food innovation in Africa</p> 
+                <h1>business_stream</h1>
                 
-                <p>Agro-Whizz is founded by Mr. Patrick Bope and who has been in the food industry since 2013.</p> 
-                
-                <p>The Vision of Agro-Whizz is to help food industry, restaurant and food handlers to produce a higher safe and quality product. Agro-Whizz use proven techniques and knowledge to help is customers to produce higher quality and safe products that will in turn increase the product value on the market.</p> 
-                
-                <p>By understanding the entire food manufacturing process, Agro-Whizz will help optimize all procedures – saving hundreds of percentages in losses and adding to the total profitability of your company.</p> 
+                    {% for business_stream in business_streams %}
+                      {{ business_stream.business_stream_name }} <br>
+                    {% endfor %}
                 
                 <h1><strong>How we started</strong></h1>
         
