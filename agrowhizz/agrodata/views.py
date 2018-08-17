@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from .models import Business_stream
+from .models import Database
 # Create your views here.
 def agrodata(request):
     return render(request, 'agrodata/agrodata.html', {})
 
 def foodindustrydata(request):
-    business_streams = Business_stream.objects.all()
+    databases = Database.objects.all()
     context = {
-        'business_streams': business_streams,  
+        'databases': databases,  
     }
     return render(request, 'agrodata/foodindustrydata.html', context)

@@ -5,17 +5,17 @@ from django.utils.html import mark_safe
 # Create your models here.
 
 
-class Business_stream(models.Model):
-    business_stream_name = models.CharField(max_length=30, unique=True)
-    business_stream_description = models.CharField(max_length=100)
+class Database(models.Model):
+    name = models.CharField(max_length=30, unique=True)
+    description = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.business_stream_name
+        return self.name
 
 class Company(models.Model):
     company_name = models.CharField(max_length=100, unique=True)
     profile_description = models.CharField(max_length=100)
-    business_stream_id = models.ForeignKey(Business_stream, related_name='companies',on_delete=models.PROTECT)
+    business_stream_id = models.ForeignKey(Database, related_name='companies',on_delete=models.PROTECT)
     last_updated = models.DateTimeField(auto_now_add=True)
     
     
