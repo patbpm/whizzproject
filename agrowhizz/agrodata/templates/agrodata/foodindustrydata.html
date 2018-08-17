@@ -2,8 +2,8 @@
 {% block content %}
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Agro Whizz Database</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+    <h1 class="jumbotron-heading">Start Your Search</h1>
+    <p class="lead text-muted">Use AGROWHIZZ DATABASE’s search tool to find a list of company and contacts.  Building your list is as easy as 1, 2, 3</p>
     <p>
       <a href="#" class="btn btn-primary my-2">Main call to action</a>
       <a href="#" class="btn btn-secondary my-2">Secondary action</a>
@@ -21,7 +21,7 @@
                         </div>
                     </div>               
                     <div class="form-group"> <!-- Country field -->
-                        <label class="control-label " for="name">Country Name</label>
+                        <label class="control-label " for="name">State/Province</label>
                         <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
                         </div>
                     </div>
@@ -31,38 +31,21 @@
                         <div class="bfh-selectbox bfh-states" data-country="US" data-state="CA">
                         </div>
                     </div>
-                    
-                    <div class="form-group"> <!-- Subject field -->
-                        <label class="control-label " for="subject">Subject</label>
-                        <input class="form-control" id="subject" name="subject" type="text"/>
-                    </div>
-                    
-                    <div class="form-group"> <!-- Message field -->
-                        <label class="control-label " for="message">Message</label>
-                        <textarea class="form-control" cols="40" id="message" name="message" rows="10"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-                    </div>
                         
                 </form>	
             </div>
             <div class="col-12 col-sm-8"> 
                 <h1>business_stream</h1>
                 
-                    
+                    {% for database in databases %}
+                      {{ database.name }} <br>
+                    {% endfor %}
                 
-                <h1><strong>How we started</strong></h1>
+               
         
                 <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
                 
-                <p>Knowledge is the key to success - and the Food Safety Network was created as a result of an ever increasing demand for food safety information within the food industry.
-                
-                Our website is the core of our business, acting as a knowledge bank for industry and consumer alike, where they can access information and resources, register for food safety training, advertise their services and keep updated with pertinent food news.  We want our passion for food safety to be contagious, so that we can encourage all those in the industry to build a food safety culture within their company.
-                
-                We are more than just a local business – we network with fellow professionals across the globe, to learn from them and to ensure that we are abreast of current food safety issues and worldwide industry trends.</p> 
-                
+                                
             </div>
             
         </div>
