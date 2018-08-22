@@ -13,3 +13,12 @@ def foodindustrydata(request):
         'databases': databases,  
     }
     return render(request, 'agrodata/foodindustrydata.html', context)
+
+def companyList(request, pk):
+    databases = Database.objects.get(pk=pk)
+    
+    context = {
+        'databases': databases,
+        
+    }
+    return render(request, 'agrodata/companyList.html', context)
