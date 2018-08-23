@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Database
+from .models import Database, Company
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 def agrodata(request):
@@ -8,7 +8,7 @@ def agrodata(request):
 
 @login_required
 def foodindustrydata(request):
-    databases = Database.objects.all()
+    databases = Database.objects.all().order_by('name')
     context = {
         'databases': databases,  
     }
@@ -16,9 +16,11 @@ def foodindustrydata(request):
 
 def companyList(request, pk):
     databases = Database.objects.get(pk=pk)
+    companies = databases.companies.order_by('company_name')
     
     context = {
         'databases': databases,
+        'companies': companies,
         
     }
     return render(request, 'agrodata/companyList.html', context)

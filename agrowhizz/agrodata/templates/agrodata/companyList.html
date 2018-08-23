@@ -38,9 +38,35 @@
                 
                 <div class="container">
                     <ol class="breadcrumb my-4">
-                      <li class="breadcrumb-item">Agrodata</li>
-                      <li class="breadcrumb-item active">{{ database.name }}</li>
+                      <li class="breadcrumb-item"><a href="{% url 'foodindustrydata' %}">Agrodata</a></li>
+                      <li class="breadcrumb-item active">{{ databases.name }}</li>
                     </ol>
+                </div>
+                <div class="container">
+                    <table class="table">
+                      <thead class="thead-inverse">
+                        <tr>
+                          <th>Categories</th>
+                          <th>Total</th>
+                          <th>Views</th>
+                          <th>Last Upadate</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for company in companies %}
+                          <tr>
+                            <td>
+                                <a href="">{{ company.company_name }}</a>
+                                <br>
+                              <small class="text-muted d-block">{{ company.profile_description }}</small>
+                            </td>
+                            <td class="align-middle">0</td>
+                            <td class="align-middle">0</td>
+                            <td></td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                    </table>
                 </div>
 
                     
