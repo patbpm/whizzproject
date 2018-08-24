@@ -15,7 +15,6 @@ class BoardListView(ListView):
     template_name = 'boards/boards.html'
 
 
-
 def board_topics(request, pk):
     board = Board.objects.get(pk=pk)
     topics = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)

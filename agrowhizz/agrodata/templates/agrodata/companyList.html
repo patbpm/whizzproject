@@ -13,28 +13,23 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-sm-2">
+                 <div class="container">
+                    <ol class="breadcrumb my-4">
+                      <li class="breadcrumb-item"><a href="{% url 'foodindustrydata' %}">Agrodata</a></li>
+                      <li class="breadcrumb-item active">{{ databases.name }}</li>
+                    </ol>
+                </div>
                 <form>
                     <div class="form-group"> <!-- Country field -->
                         <label class="control-label " for="name">Country Name</label>
                         <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
                         </div>
                     </div>               
-                    <div class="form-group"> <!-- Country field -->
-                        <label class="control-label " for="name">State/Province</label>
-                        <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group"> <!-- Email field -->
-                        <label class="control-label requiredField" for="email">State/Province</label>
-                        <div class="bfh-selectbox bfh-states" data-country="US" data-state="CA">
-                        </div>
-                    </div>
-                        
+                                           
                 </form>	
             </div>
-            <div class="col-12 col-sm-8"> 
+            <div class="col-12 col-sm-10"> 
                 
                 <div class="container">
                     <ol class="breadcrumb my-4">
@@ -43,30 +38,39 @@
                     </ol>
                 </div>
                 <div class="container">
-                    <table class="table">
-                      <thead class="thead-inverse">
-                        <tr>
-                          <th>Categories</th>
-                          <th>Total</th>
-                          <th>Views</th>
-                          <th>Last Upadate</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {% for company in companies %}
-                          <tr>
-                            <td>
-                                <a href="">{{ company.company_name }}</a>
-                                <br>
-                              <small class="text-muted d-block">{{ company.profile_description }}</small>
-                            </td>
-                            <td class="align-middle">0</td>
-                            <td class="align-middle">0</td>
-                            <td></td>
-                          </tr>
-                          {% endfor %}
-                      </tbody>
-                    </table>
+                    
+                    {% for company in companies %}
+                    <div class="card">
+                        <div class="card-header text-white bg-secondary py-2 px-3"><strong>{{ company.company_name }}</strong></div>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-2">
+                                <img src="/static/imgs/home/avatar.png"  alt="" class="w-100">
+                                
+                                </div>
+                                <div class="col-10">
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                        <strong class="text-muted"><a href="">{{ company.company_name }}</a></strong>
+                                        <small class="text-muted d-block">{{ company.profile_description }}</small>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                        
+                                            <div class="mt-3">
+                                                <a href=""
+                                                    class="btn btn-primary btn-sm"
+                                                    role="button">More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% endfor %}
+                     
                 </div>
 
                     

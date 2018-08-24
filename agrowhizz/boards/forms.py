@@ -9,7 +9,7 @@ class NewTopicForm(forms.ModelForm):
         ),
         max_length=4000,
         help_text='The max length of the text is 4000.'
-    )
+    ) 
 
     class Meta:
         model = Topic
