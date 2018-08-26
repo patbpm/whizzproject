@@ -1,4 +1,7 @@
 {% extends 'blog/bloglayout.html' %}
+{% block title %}
+Post - {{ post.title }} 
+{% endblock %}
 {% block blogmain %}
     
     {% if post.published_date %}
