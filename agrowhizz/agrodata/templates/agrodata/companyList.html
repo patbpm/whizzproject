@@ -54,7 +54,7 @@
                                 <div class="col-10">
                                     <div class="row mb-3">
                                         <div class="col-6">
-                                        <strong class="text-muted"><a href="">{{ company.company_name }}</a></strong>
+                                        <strong class="text-muted"><a href="{% url 'companyDetails database.pk company.pk' %}">{{ company.company_name }}</a></strong>
                                         <small class="text-muted d-block">{{ company.profile_description }}</small>
                                         </div>
                                         <div class="col-6 text-right">

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Database, Company
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -24,3 +24,13 @@ def companyList(request, pk):
         
     }
     return render(request, 'agrodata/companyList.html', context)
+
+def companyDetails(request, pk, company_pk):
+    databases = Database.objects.get()
+    databases = get_object_or_404(Company, database__pk=pk, pk=company_pk)
+    
+    context = {
+       
+        
+    }
+    return render(request, 'agrodata/companyDetails.html', context)
