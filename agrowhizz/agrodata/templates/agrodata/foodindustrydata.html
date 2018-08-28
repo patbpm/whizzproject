@@ -16,59 +16,39 @@ Industry Types
 <section>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-4">
-                <form>
-                    <div class="form-group"> <!-- Country field -->
-                        <label class="control-label " for="name">Country Name</label>
-                        <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-                        </div>
-                    </div>               
-                    <div class="form-group"> <!-- Country field -->
-                        <label class="control-label " for="name">State/Province</label>
-                        <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group"> <!-- Email field -->
-                        <label class="control-label requiredField" for="email">State/Province</label>
-                        <div class="bfh-selectbox bfh-states" data-country="US" data-state="CA">
-                        </div>
-                    </div>
-                        
-                </form>	
-            </div>
-            <div class="col-12 col-sm-8"> 
+            
+            <div class="col-12"> 
                 
                                 
-                    <div class="container">
-                        <ol class="breadcrumb my-4">
-                          <li class="breadcrumb-item active"><h1>Categories List</h1></li>
-                        </ol>
-                        <table class="table">
-                          <thead class="thead-inverse">
+                <div class="container">
+                    <ol class="breadcrumb my-4">
+                        <li class="breadcrumb-item active"><h1>Categories List</h1></li>
+                    </ol>
+                    <table class="table">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>Categories</th>
+                            <th>Total</th>
+                            <th>Views</th>
+                            <th>Last Upadate</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for database in databases %}
                             <tr>
-                              <th>Categories</th>
-                              <th>Total</th>
-                              <th>Views</th>
-                              <th>Last Upadate</th>
+                            <td>
+                                <a href="{% url 'companyList' database.pk %}">{{ database.name }}</a>
+                                <br>
+                                <small class="text-muted d-block">{{ database.description }}</small>
+                            </td>
+                            <td class="align-middle">0</td>
+                            <td class="align-middle">0</td>
+                            <td></td>
                             </tr>
-                          </thead>
-                          <tbody>
-                            {% for database in databases %}
-                              <tr>
-                                <td>
-                                    <a href="{% url 'companyList' database.pk %}">{{ database.name }}</a>
-                                    <br>
-                                  <small class="text-muted d-block">{{ database.description }}</small>
-                                </td>
-                                <td class="align-middle">0</td>
-                                <td class="align-middle">0</td>
-                                <td></td>
-                              </tr>
-                              {% endfor %}
-                          </tbody>
-                        </table>
-                    </div>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
                     
         
                 <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
