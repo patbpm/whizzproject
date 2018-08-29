@@ -23,3 +23,24 @@ class Company(models.Model):
     
     def __str__(self):
         return self.company_name
+
+# Database for all address of the Food Industry #
+class CompanyAddress(models.Model):
+    company_name = models.ForeignKey(Company, related_name='companyAddress',on_delete=models.PROTECT)
+    location = models.CharField(max_length=200)
+    city = models.CharField(max_length=25)
+    state = models.CharField(max_length=25)
+    country = models.CharField(max_length=25)
+    postal_code = models.CharField(max_length=6)
+    fax= models.CharField(max_length=15)
+    telephone = models.CharField(max_length=15)
+    website = models.URLField(null=True, blank=True)
+    twitter = models.URLField(null=True, blank=True)
+    facebook = models.URLField(null=True, blank=True)
+    linkedin = models.URLField(null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
+    last_updated = models.DateTimeField(auto_now_add=True)
+    
+    
+    def __str__(self):
+        return self.location
