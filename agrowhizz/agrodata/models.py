@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils.html import mark_safe
 # Create your models here.
 
-
+# Database for all the food classification #
 class Database(models.Model):
     name = models.CharField(max_length=30, unique=True)
     description = models.CharField(max_length=100)
@@ -12,6 +12,8 @@ class Database(models.Model):
     def __str__(self):
         return self.name
 
+
+# Database for all Food Industry #
 class Company(models.Model):
     company_name = models.CharField(max_length=100, unique=True)
     profile_description = models.CharField(max_length=100)

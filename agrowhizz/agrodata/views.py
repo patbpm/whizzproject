@@ -7,6 +7,7 @@ def agrodata(request):
     return render(request, 'agrodata/agrodata.html', {})
 
 @login_required
+# view for all the food classification #
 def foodindustrydata(request):
     databases = Database.objects.all().order_by('name')
     context = {
@@ -14,6 +15,7 @@ def foodindustrydata(request):
     }
     return render(request, 'agrodata/foodindustrydata.html', context)
 
+# View for all the Comany Name #
 def companyList(request, pk):
     databases = Database.objects.get(pk=pk)
     companies = databases.companies.order_by('company_name')
@@ -26,11 +28,12 @@ def companyList(request, pk):
     return render(request, 'agrodata/companyList.html', context)
 
 def companyDetails(request, pk, company_pk):
-    databases = Database.objects.get()
-    databases = get_object_or_404(Company, database__pk=pk, pk=company_pk)
+    
+    company = get_object_or_404(Company, database__pk=pk, pk=company_pk)
     
     context = {
        
+       'company': company
         
     }
     return render(request, 'agrodata/companyDetails.html', context)
