@@ -15,8 +15,19 @@ Company Details
         <div class="col-md-8 px-0">
             <h1 class="display-4 font-italic">{{ company.company_name }}</h1>
             <p class="lead my-3">{{ company.profile_description }}</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-                    
+            <div>
+              <strong>Physical Address:</strong>
+              <p> {{ addresses.location }}, {{ addresses.city }}, {{ addresses.state }}, {{ addresses.country }}, {{ addresses.postal_code }}</p>
+            </div>
+            <div>
+              <strong>Contats:</strong>
+              <p> Tel: {{ addresses.telephone }}, Fax: {{ addresses.fax }}, Email: {{ addresses.email }}</p>
+            </div>
+            <p></p>
+            <small>Website: <a href="{{ addresses.website }}" target="_blank">{{ addresses.website }}</a></small><br>
+            <small>Twiiter: <a href="{{ addresses.twitter }}" target="_blank">{{ addresses.twitter }}</a></small><br>
+            <small>Facebook: <a href="{{ addresses.facebook }}" target="_blank">{{ addresses.facebook  }}</a></small><br> 
+            <small>linkedIn: <a href="{{ addresses.linkedin }}" target="_blank">{{ addresses.linkedin }}</a></small><br>          
         </div>
         <div class="col-md-4 px-0 ">
             <img src="/static/imgs/home/AWLogo.jpg"  alt="" class="w-100 img-fluid">
