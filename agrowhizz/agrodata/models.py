@@ -17,6 +17,7 @@ class Database(models.Model):
 class Company(models.Model):
     company_name = models.CharField(max_length=100, unique=True)
     profile_description = models.CharField(max_length=100)
+    full_description = models.TextField(null=True)
     database = models.ForeignKey(Database, related_name='companies',on_delete=models.PROTECT)
     last_updated = models.DateTimeField(auto_now_add=True)
     
