@@ -42,10 +42,13 @@ Company Details
       <div class="col-md-8 blog-main">
           <div class="accordion" id="accordionExample">
               <div class="card">
-                <div class="card-header bg-dark" id="headingOne">
+                <div class="card-header shadow p-4 mb-2 rounded" id="headingOne">
                   <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      COMPANY DESCRIPTION
+                      <h5 class="mb-0">
+                        COMPANY DESCRIPTION <i class="fa fa-angle-down rotate-icon "></i>
+                      </h5>
+                      
                     </button>
                   </h5>
                 </div>
@@ -55,30 +58,172 @@ Company Details
                     {{ company.company_name }} <hr>
 
                     {{ company.full_description }}
+                    <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
                   </div>
                 </div>
               </div>
               <div class="card">
-                <div class="card-header" id="headingTwo">
+                <div class="card-header shadow p-4 mb-2 rounded" id="headingTwo">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      PRODUCTS/SERVICES
+                      <h5 class="mb-0">
+                        PRODUCTS/SERVICES <i class="fa fa-angle-down rotate-icon "></i>
+                      </h5>
                     </button>
                   </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                    <!--Accordion wrapper-->
+                          <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                            
+                              <!-- Accordion card -->
+                              <div class="card">
+                            
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingOne1">
+                                  <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                                    <h5 class="mt-1 mb-0">
+                                      Collapsible Group Item #1 <i class="fa fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                  </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                                  <div class="card-body ">
+                                    <table class="table table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Code</th>
+                                          <th scope="col">Product Name</th>
+                                          <th scope="col">Price</th>
+                                          
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <th scope="row">HS-2521</th>
+                                          <td>Coriander Coarse</td>
+                                          <td>R75.00</td>
+                                          
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">HS-2015</th>
+                                          <td>Pepper Black Coarse</td>
+                                          <td>R75.00</td>
+                                        </tr>
+                                        <tr>
+                                          <th scope="row">B-1025</th>
+                                          <td>Mixed Coarse</td>
+                                          <td>R75.00</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                            
+                              </div>
+                              <!-- Accordion card -->
+                            
+                              <!-- Accordion card -->
+                              <div class="card">
+                            
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingTwo2">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                    <h5 class="mb-0">
+                                      Collapsible Group Item #2 <i class="fa fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                  </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                                  <div class="card-body">
+                                     <!-- Table responsive wrapper -->
+                                    <div class="table-responsive mx-3">
+                                        <!--Table-->
+                                        <table class="table table-hover mb-0">
+
+                                            <!--Table head-->
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <input class="form-check-input" type="checkbox" id="checkbox">
+                                                        <label for="checkbox" class="mr-2 label-table"></label>
+                                                    </th>
+                                                    <th class="th-lg">Code</th>
+                                                    <th class="th-lg">Product Name</th>
+                                                    <th class="th-lg">Price</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <!--Table head-->
+                                            <!--Table body-->
+                                            <tbody>
+                                              <tr>
+                                                  <th scope="row">
+                                                      <input class="form-check-input" type="checkbox" id="checkbox1">
+                                                      <label for="checkbox1" class="label-table"></label>
+                                                  </th>
+                                                  <td>HS-5241</td>
+                                                  <td>Coriander Coarse</td>
+                                                  <td>R75.00</td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">
+                                                    <input class="form-check-input" type="checkbox" id="checkbox1">
+                                                    <label for="checkbox1" class="label-table"></label>
+                                                </th>
+                                                <td>HS-5241</td>
+                                                <td>Balck Pepper and Coriander Coarse</td>
+                                                <td>R75.00</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                              </div>
+                              <!-- Accordion card -->
+                            
+                              <!-- Accordion card -->
+                              <div class="card">
+                            
+                                <!-- Card header -->
+                                <div class="card-header" role="tab" id="headingThree3">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                                    <h5 class="mb-0">
+                                      Collapsible Group Item #3 <i class="fa fa-angle-down rotate-icon"></i>
+                                    </h5>
+                                  </a>
+                                </div>
+                            
+                                <!-- Card body -->
+                                <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                                  <div class="card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                  </div>
+                                </div>
+                            
+                              </div>
+                              <!-- Accordion card -->
+                            
+                            </div>
+                            <!-- Accordion wrapper -->
+                    <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
                   </div>
                 </div>
               </div>
               <div class="card">
-                <div class="card-header" id="headingThree">
+                <div class="card-header shadow p-4 mb-2 rounded" id="headingThree">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      CONTACT INFORMATION
+                      <h5 class="mb-0">
+                        CONTACT INFORMATION <i class="fa fa-angle-down rotate-icon "></i>
+                      </h5>
                     </button>
                   </h5>
                 </div>
