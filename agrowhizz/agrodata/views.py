@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Database, Company, CompanyAddress
+from .models import Database, Company, CompanyAddress, IngredientsCategories, Ingredients
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 def agrodata(request):
@@ -31,11 +31,12 @@ def companyDetails(request, pk, company_pk):
     
     company = get_object_or_404(Company, database__pk=pk, pk=company_pk)
     addresses = company.companyAddress.get()
+    categories = IngredientsCategories.objects.all()
     context = {
        
        'company': company,
        'addresses': addresses,
-       
+       'categories': categories,
         
     }
     return render(request, 'agrodata/companyDetails.html', context)

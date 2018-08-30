@@ -58,7 +58,7 @@ class IngredientsCategories(models.Model):
 class Ingredients(models.Model):
     name = models.CharField(max_length=200)
     category = models.ForeignKey(IngredientsCategories, related_name='Ingredients',on_delete=models.PROTECT)
-    company_name = models.ForeignKey(Company, related_name='Ingredients',on_delete=models.PROTECT)
+    company_name = models.ForeignKey(Company, related_name='companyname',on_delete=models.PROTECT)
     product_code = models.CharField(max_length=10)
     last_updated = models.DateTimeField(auto_now_add=True)
     
