@@ -84,7 +84,23 @@ Company Details
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                      <div>
+                        <strong>Physical Address:</strong><hr>
+                        <p> {{ addresses.location }}, {{ addresses.city }}, {{ addresses.state }}, {{ addresses.country }}, {{ addresses.postal_code }}</p>
+                      </div>
+                      
+                      <div>
+                        <strong>Contats Details:</strong><hr>
+                        <p> Tel: {{ addresses.telephone }}</p>
+                        <p> Fax: {{ addresses.fax }}</p>
+                        <p> Email: {{ addresses.email }}</p>
+                        
+                      </div>
+                      <hr>
+                      <small>Website: <a href="{{ addresses.website }}" target="_blank">{{ addresses.website }}</a></small><br>
+                      <small>Twiiter: <a href="{{ addresses.twitter }}" target="_blank">{{ addresses.twitter }}</a></small><br>
+                      <small>Facebook: <a href="{{ addresses.facebook }}" target="_blank">{{ addresses.facebook  }}</a></small><br> 
+                      <small>linkedIn: <a href="{{ addresses.linkedin }}" target="_blank">{{ addresses.linkedin }}</a></small><br>
                   </div>
                 </div>
               </div>
