@@ -100,6 +100,7 @@ Company Details
 
                                             <!--Table head-->
                                             <thead>
+                                                
                                                 <tr>
                                                     <th>
                                                         <input class="form-check-input" type="checkbox" id="checkbox">
@@ -114,24 +115,20 @@ Company Details
                                             <!--Table head-->
                                             <!--Table body-->
                                             <tbody>
+                                              {% for ingredient in ingredients %}
+                                              {% if ingredient.category == category.category %}
                                               <tr>
                                                   <th scope="row">
                                                       <input class="form-check-input" type="checkbox" id="checkbox1">
                                                       <label for="checkbox1" class="label-table"></label>
                                                   </th>
-                                                  <td>HS-5241</td>
-                                                  <td>Coriander Coarse</td>
+                                                  <td>{{ ingredient.product_code }} </td>
+                                                  <td>{{ ingredient.name }} </td>
                                                   <td>R75.00</td>
                                               </tr>
-                                              <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox" id="checkbox1">
-                                                    <label for="checkbox1" class="label-table"></label>
-                                                </th>
-                                                <td>HS-5241</td>
-                                                <td>Balck Pepper and Coriander Coarse</td>
-                                                <td>R75.00</td>
-                                            </tr>
+                                              {% endif %}
+                                              {% endfor %}
+                                             
                                             </tbody>
                                         </table>
                                     </div>

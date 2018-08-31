@@ -1,0 +1,91 @@
+{% extends 'home/index.html' %}
+{% block title %}
+{{ categories.category }} - Ingredient List
+{% endblock %}
+{% block content %}
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Start Your Search</h1>
+    <p class="lead text-muted">Use AGROWHIZZ DATABASE’s search tool to find a list of company and contacts.  Building your list is as easy as 1, 2, 3</p>
+    <p>
+      <a href="#" class="btn btn-primary my-2">Main call to action</a>
+      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+    </p>
+  </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-2">
+                 <div class="container">
+                    <ol class="breadcrumb my-4">
+                      <li class="breadcrumb-item"><a href="{% url 'foodcategoriesdata' %}">Food Categories</a></li>
+                      <li class="breadcrumb-item active">{{ categories.category }}</li>
+                    </ol>
+                </div>
+                <form>
+                    <div class="form-group"> <!-- Country field -->
+                        <label class="control-label " for="name">Country Name</label>
+                        <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+                        </div>
+                    </div>               
+                                           
+                </form>	
+            </div>
+            <div class="col-12 col-sm-10"> 
+                
+                <div class="container">
+                    <ol class="breadcrumb my-4">
+                      <li class="breadcrumb-item"><a href="{% url 'foodcategoriesdata' %}">Food Categories</a></li>
+                      <li class="breadcrumb-item active">{{ categories.category }}</li>
+                    </ol>
+                </div>
+                <div class="container">
+                    
+                    {% for ingredient in ingredients %}
+                    <div class="card">
+                        <div class="card-header text-white bg-secondary py-2 px-3"><strong>{{ ingredient.name }}</strong></div>
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-2">
+                                <img src="/static/imgs/home/avatar.png"  alt="" class="w-100">
+                                
+                                </div>
+                                <div class="col-10">
+                                    <div class="row mb-3">
+                                        <div class="col-6">
+                                        <strong class="text-muted"><a href="">{{ ingredient.name }}</a></strong>
+                                        <small class="text-muted d-block">{{ ingredient.product_code}}</small>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                        
+                                            <div class="mt-3">
+                                                <a href=""
+                                                    class="btn btn-primary btn-sm"
+                                                    role="button">More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% endfor %}
+                     
+                </div>
+
+                    
+        
+                <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
+                
+                                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
