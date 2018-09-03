@@ -54,13 +54,13 @@
                                 <div class="col-10">
                                     <div class="row mb-3">
                                         <div class="col-6">
-                                        <strong class="text-muted"><a href="">{{ ingredient.name }}</a></strong>
+                                        <strong class="text-muted"><a href="{% url 'ingredientDetails' ingredient.category.pk ingredient.pk %}">{{ ingredient.name }}</a></strong>
                                         <small class="text-muted d-block">{{ ingredient.product_code}}</small>
                                         </div>
                                         <div class="col-6 text-right">
                                         
                                             <div class="mt-3">
-                                                <a href=""
+                                                <a href="{% url 'ingredientDetails' ingredient.category.pk ingredient.pk %}"
                                                     class="btn btn-primary btn-sm"
                                                     role="button">More</a>
                                             </div>

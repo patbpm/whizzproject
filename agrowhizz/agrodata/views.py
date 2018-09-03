@@ -57,7 +57,6 @@ def companyDetails(request, pk, company_pk):
     ingredients = company.Ingredients.all()
 
 
-
     context = {
        
        'company': company,
@@ -66,3 +65,18 @@ def companyDetails(request, pk, company_pk):
        'ingredients': ingredients,
     }
     return render(request, 'agrodata/companyDetails.html', context)
+
+def ingredientDetails(request, pk, ingredient_pk):
+    
+    ingredient = get_object_or_404(Ingredients, category__pk=pk, pk=ingredient_pk)
+    
+    
+
+
+    context = {
+       
+       'ingredient': ingredient,
+      
+       
+    }
+    return render(request, 'agrodata/ingredientDetails.html', context)

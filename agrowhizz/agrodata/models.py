@@ -61,7 +61,7 @@ class Ingredients(models.Model):
     company_name = models.ForeignKey(Company, related_name='Ingredients',on_delete=models.PROTECT)
     product_code = models.CharField(max_length=10)
     last_updated = models.DateTimeField(auto_now_add=True)
-    
+
     
     def __str__(self):
         return self.name
