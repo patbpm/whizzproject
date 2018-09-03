@@ -123,7 +123,7 @@ Company Details
                                                       <label for="checkbox1" class="label-table"></label>
                                                   </th>
                                                   <td>{{ ingredient.product_code }} </td>
-                                                  <td>{{ ingredient.name }} </td>
+                                                  <td><a href="{% url 'ingredientDetails' ingredient.category.pk ingredient.pk %}">{{ ingredient.name }}</a> </td>
                                                   <td>R75.00</td>
                                               </tr>
                                               {% endif %}

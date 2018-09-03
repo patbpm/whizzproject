@@ -1,20 +1,20 @@
 {% extends 'home/index.html' %}
 {% block title %}
-Company Details
+Ingredient Details
 {% endblock %}
 {% block content %}
 <div class="container">
   <div class="container">
     <ol class="breadcrumb my-4">
-      <li class="breadcrumb-item"><a href="">{{ company.database.name }}</a></li>
-      <li class="breadcrumb-item active">{{ company.company_name }}</li>
+      <li class="breadcrumb-item"><a href="">{{ ingredient.category.category }}</a></li>
+      <li class="breadcrumb-item active">{{ ingredient.name }}</li>
     </ol>
   </div>
   <div class="jumbotron p-3 p-md-5 text-white rounded bg-secondary">
     <div class="row">
         <div class="col-md-8 px-0">
-            <h1 class="display-4 font-italic">{{ company.company_name }}</h1>
-            <p class="lead my-3">{{ company.profile_description }}</p>
+            <h1 class="display-4 font-italic">{{ ingredient.name }}</h1>
+            <p class="lead my-3">{{ ingredient.company_name }}</p>
             <div>
               <strong>Physical Address:</strong>
               <p> {{ addresses.location }}, {{ addresses.city }}, {{ addresses.state }}, {{ addresses.country }}, {{ addresses.postal_code }}</p>
@@ -45,8 +45,8 @@ Company Details
                 <div class="card-header shadow p-4 mb-2 rounded" id="headingOne">
                   <h5 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      <h5 class="mb-0">
-                        COMPANY DESCRIPTION <i class="fa fa-angle-down rotate-icon "></i>
+                      <h5 class="mb-0"> 
+                        INGREDIENT DESCRIPTION <i class="fa fa-angle-down rotate-icon "></i>
                       </h5>
                       
                     </button>

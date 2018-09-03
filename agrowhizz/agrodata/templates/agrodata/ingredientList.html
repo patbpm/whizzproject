@@ -44,7 +44,7 @@
                     
                     {% for ingredient in ingredients %}
                     <div class="card">
-                        <div class="card-header text-white bg-secondary py-2 px-3"><strong>{{ ingredient.name }}</strong></div>
+                        <div class="card-header text-white bg-secondary py-2 px-3"><strong>{{ ingredient.name }}  - {{ ingredient.company_name }}</strong></div>
                         <div class="card-body p-3">
                             <div class="row">
                                 <div class="col-2">
@@ -54,7 +54,7 @@
                                 <div class="col-10">
                                     <div class="row mb-3">
                                         <div class="col-6">
-                                        <strong class="text-muted"><a href="{% url 'ingredientDetails' ingredient.category.pk ingredient.pk %}">{{ ingredient.name }}</a></strong>
+                                        <strong class="text-muted"><a href="{% url 'ingredientDetails' ingredient.category.pk ingredient.pk %}">{{ ingredient.name }} </a></strong>
                                         <small class="text-muted d-block">{{ ingredient.product_code}}</small>
                                         </div>
                                         <div class="col-6 text-right">
