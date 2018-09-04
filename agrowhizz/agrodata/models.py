@@ -65,3 +65,24 @@ class Ingredients(models.Model):
     
     def __str__(self):
         return self.name + " - " + self.company_name.company_name 
+
+
+class IngredientDetail(models.Model):
+    ingredient_name = models.ForeignKey(Ingredients, related_name='IngredientDetail',on_delete=models.PROTECT)
+    declaration= models.CharField(max_length=500)
+    usage = models.CharField(max_length=500)
+    full_description = models.TextField(null=True)
+    
+    
+    def __str__(self):
+        return self.ingredient_name.name
+
+class ProductPhysicalProperty(models.Model):
+    ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPhysicalProperty',on_delete=models.PROTECT)
+    Colour= models.CharField(max_length=500)
+    Taste = models.CharField(max_length=500)
+    Flavour = models.CharField(max_length=500)
+    
+    
+    def __str__(self):
+        return self.ingredient_name.name
