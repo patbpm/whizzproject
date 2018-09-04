@@ -75,7 +75,7 @@ class IngredientDetail(models.Model):
     
     
     def __str__(self):
-        return self.ingredient_name.name
+        return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name 
 
 class ProductPhysicalProperty(models.Model):
     ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPhysicalProperty',on_delete=models.PROTECT)
@@ -85,4 +85,4 @@ class ProductPhysicalProperty(models.Model):
     
     
     def __str__(self):
-        return self.ingredient_name.name
+        return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name
