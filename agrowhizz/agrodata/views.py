@@ -53,10 +53,9 @@ def companyDetails(request, pk, company_pk):
     
     company = get_object_or_404(Company, database__pk=pk, pk=company_pk)
     addresses = company.companyAddress.get()
-    categories = company.Ingredients.all()
     ingredients = company.Ingredients.all()
-
-
+    categories = ingredients.order_by('category__category').values_list('category__category', flat=True).distinct()
+    
     context = {
        
        'company': company,

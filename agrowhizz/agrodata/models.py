@@ -44,7 +44,7 @@ class CompanyAddress(models.Model):
     
     
     def __str__(self):
-        return self.location
+        return self.company_name.company_name
 
 # Database for all the Ingredients Categories #
 class IngredientsCategories(models.Model):
@@ -64,4 +64,4 @@ class Ingredients(models.Model):
 
     
     def __str__(self):
-        return self.name
+        return self.name + " - " + self.company_name.company_name 

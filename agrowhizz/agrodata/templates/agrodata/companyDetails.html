@@ -1,6 +1,6 @@
 {% extends 'home/index.html' %}
 {% block title %}
-Company Details
+{{ company.company_name }} Details
 {% endblock %}
 {% block content %}
 <div class="container">
@@ -83,15 +83,15 @@ Company Details
                             
                                 <!-- Card header -->
                                 <div class="card-header" role="tab" id="headingTwo2">
-                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#a{{ category.id }}" aria-expanded="false" aria-controls="collapseTwo2">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#a{{ category }}" aria-expanded="false" aria-controls="collapseTwo2">
                                     <h5 class="mb-0">
-                                        {{ category.category }} <i class="fa fa-angle-down rotate-icon"></i>
+                                        {{category}} <i class="fa fa-angle-down rotate-icon"></i>
                                     </h5>
                                   </a>
                                 </div>
                             
                                 <!-- Card body -->
-                                <div id="a{{ category.id }}" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                                <div id="a{{ category}}" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
                                   <div class="card-body">
                                      <!-- Table responsive wrapper -->
                                     <div class="table-responsive mx-3">
@@ -116,17 +116,17 @@ Company Details
                                             <!--Table body-->
                                             <tbody>
                                               {% for ingredient in ingredients %}
-                                              {% if ingredient.category == category.category %}
+                                              
                                               <tr>
                                                   <th scope="row">
                                                       <input class="form-check-input" type="checkbox" id="checkbox1">
                                                       <label for="checkbox1" class="label-table"></label>
                                                   </th>
-                                                  <td>{{ ingredient.product_code }} </td>
+                                                  <td>{{ ingredient.category }} </td>
                                                   <td><a href="{% url 'ingredientDetails' ingredient.category.pk ingredient.pk %}">{{ ingredient.name }}</a> </td>
                                                   <td>R75.00</td>
                                               </tr>
-                                              {% endif %}
+                                             
                                               {% endfor %}
                                              
                                             </tbody>
