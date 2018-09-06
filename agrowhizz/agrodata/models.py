@@ -27,13 +27,13 @@ class Company(models.Model):
 
 # Database for all address of the Food Industry #
 class CompanyAddress(models.Model):
-    company_name = models.ForeignKey(Company, related_name='companyAddress',on_delete=models.PROTECT)
+    company_name = models.ForeignKey(Company, related_name='companyAddress',on_delete=models.PROTECT, unique=True)
     location = models.CharField(max_length=200)
     city = models.CharField(max_length=25)
     state = models.CharField(max_length=25)
     country = models.CharField(max_length=25)
     postal_code = models.CharField(max_length=6)
-    fax= models.CharField(max_length=15)
+    fax= models.CharField(max_length=15, null=True, blank=True)
     telephone = models.CharField(max_length=15)
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
@@ -59,7 +59,7 @@ class Ingredients(models.Model):
     name = models.CharField(max_length=200)
     category = models.ForeignKey(IngredientsCategories, related_name='Ingredients',on_delete=models.PROTECT)
     company_name = models.ForeignKey(Company, related_name='Ingredients',on_delete=models.PROTECT)
-    product_code = models.CharField(max_length=10)
+    product_code = models.CharField(max_length=10, null=True, blank=True)
     last_updated = models.DateTimeField(auto_now_add=True)
 
     
@@ -68,9 +68,9 @@ class Ingredients(models.Model):
 
 
 class IngredientDetail(models.Model):
-    ingredient_name = models.ForeignKey(Ingredients, related_name='IngredientDetail',on_delete=models.PROTECT)
-    declaration= models.CharField(max_length=500)
-    usage = models.CharField(max_length=500)
+    ingredient_name = models.ForeignKey(Ingredients, related_name='IngredientDetail',on_delete=models.PROTECT, unique=True)
+    declaration= models.CharField(max_length=500, null=True, blank=True)
+    usage = models.CharField(max_length=500, null=True, blank=True)
     full_description = models.TextField(null=True)
     
     
@@ -78,18 +78,18 @@ class IngredientDetail(models.Model):
         return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name 
 
 class ProductPhysicalProperty(models.Model):
-    ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPhysicalProperty',on_delete=models.PROTECT)
+    ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPhysicalProperty',on_delete=models.PROTECT, unique=True)
     appearance = models.CharField(max_length=500, null=True, blank=True)
-    Colour= models.CharField(max_length=500)
-    Taste = models.CharField(max_length=500)
-    Flavour = models.CharField(max_length=500)
+    Colour= models.CharField(max_length=500, null=True, blank=True)
+    Taste = models.CharField(max_length=500, null=True, blank=True)
+    Flavour = models.CharField(max_length=500, null=True, blank=True)
     
     
     def __str__(self):
         return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name
 
 class ProductPicture(models.Model):
-    ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPicture',on_delete=models.PROTECT)
+    ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPicture',on_delete=models.PROTECT,  unique=True)
     picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/productPictures", null=True, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
@@ -97,8 +97,8 @@ class ProductPicture(models.Model):
         return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name
 
 class CompanyLogo(models.Model):
-    company_name = models.ForeignKey(Company, related_name='CompanyLogo',on_delete=models.PROTECT)
-    picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/CompanyLogos", blank=True)
+    company_name = models.ForeignKey(Company, related_name='CompanyLogo',on_delete=models.PROTECT, unique=True)
+    picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/CompanyLogos", null=True, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
