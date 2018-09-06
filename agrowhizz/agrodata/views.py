@@ -68,14 +68,14 @@ def companyDetails(request, pk, company_pk):
 def ingredientDetails(request, pk, ingredient_pk):
     
     ingredient = get_object_or_404(Ingredients, category__pk=pk, pk=ingredient_pk)
-    
-    
+    details = ingredient.IngredientDetail.get()
+    organoleptics = ingredient.ProductPhysicalProperty.get()
 
 
     context = {
        
        'ingredient': ingredient,
-      
-       
+       'details': details,
+       'organoleptics': organoleptics,
     }
     return render(request, 'agrodata/ingredientDetails.html', context)

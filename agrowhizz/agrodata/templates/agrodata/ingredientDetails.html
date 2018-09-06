@@ -16,18 +16,18 @@
             <h1 class="display-4 font-italic">{{ ingredient.name }}</h1>
             <p class="lead my-3">{{ ingredient.company_name }}</p>
             <div>
-              <strong>Physical Address:</strong>
-              <p> {{ addresses.location }}, {{ addresses.city }}, {{ addresses.state }}, {{ addresses.country }}, {{ addresses.postal_code }}</p>
+              <strong>Ingredient Declaration:</strong>
+              <p> {{ details.declaration }}</p>
             </div>
+            <hr>
             <div>
-              <strong>Contats:</strong>
-              <p> Tel: {{ addresses.telephone }}, Fax: {{ addresses.fax }}, Email: {{ addresses.email }}</p>
+              <strong>Application/Usage:</strong>
+              <p> {{ details.usage }}</p>
             </div>
-            <p></p>
-            <small>Website: <a href="{{ addresses.website }}" target="_blank">{{ addresses.website }}</a></small><br>
-            <small>Twiiter: <a href="{{ addresses.twitter }}" target="_blank">{{ addresses.twitter }}</a></small><br>
-            <small>Facebook: <a href="{{ addresses.facebook }}" target="_blank">{{ addresses.facebook  }}</a></small><br> 
-            <small>linkedIn: <a href="{{ addresses.linkedin }}" target="_blank">{{ addresses.linkedin }}</a></small><br>          
+            <hr>
+            <small><strong>Colour: </strong> {{ organoleptics.Colour }}</small><br>
+            <small><strong>Flavour: </strong> {{ organoleptics.Flavour }}</small><br>
+            <small><strong>Taste: </strong> {{ organoleptics.Taste }}</small><br>       
         </div>
         <div class="col-md-4 px-0 ">
             <img src="/static/imgs/home/AWLogo.jpg"  alt="" class="w-100 img-fluid">
@@ -55,9 +55,9 @@
             
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
-                    {{ company.company_name }} <hr>
+                    <h4>{{ ingredient.name }}</h4> <hr>
 
-                    {{ company.full_description }}
+                    <p>{{ details.full_description }}</p>
                     <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
                   </div>
                 </div>
@@ -67,7 +67,7 @@
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                       <h5 class="mb-0">
-                        PRODUCTS/SERVICES <i class="fa fa-angle-down rotate-icon "></i>
+                        PRODUCT SPECIFICATION <i class="fa fa-angle-down rotate-icon "></i>
                       </h5>
                     </button>
                   </h5>
@@ -156,23 +156,7 @@
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                   <div class="card-body">
-                      <div>
-                        <strong>Physical Address:</strong><hr>
-                        <p> {{ addresses.location }}, {{ addresses.city }}, {{ addresses.state }}, {{ addresses.country }}, {{ addresses.postal_code }}</p>
-                      </div>
-                      
-                      <div>
-                        <strong>Contats Details:</strong><hr>
-                        <p> Tel: {{ addresses.telephone }}</p>
-                        <p> Fax: {{ addresses.fax }}</p>
-                        <p> Email: {{ addresses.email }}</p>
-                        
-                      </div>
-                      <hr>
-                      <small>Website: <a href="{{ addresses.website }}" target="_blank">{{ addresses.website }}</a></small><br>
-                      <small>Twiiter: <a href="{{ addresses.twitter }}" target="_blank">{{ addresses.twitter }}</a></small><br>
-                      <small>Facebook: <a href="{{ addresses.facebook }}" target="_blank">{{ addresses.facebook  }}</a></small><br> 
-                      <small>linkedIn: <a href="{{ addresses.linkedin }}" target="_blank">{{ addresses.linkedin }}</a></small><br>
+                     
                   </div>
                 </div>
               </div>
