@@ -79,6 +79,7 @@ class IngredientDetail(models.Model):
 
 class ProductPhysicalProperty(models.Model):
     ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPhysicalProperty',on_delete=models.PROTECT)
+    appearance = models.CharField(max_length=500, null=True, blank=True)
     Colour= models.CharField(max_length=500)
     Taste = models.CharField(max_length=500)
     Flavour = models.CharField(max_length=500)
@@ -86,3 +87,19 @@ class ProductPhysicalProperty(models.Model):
     
     def __str__(self):
         return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name
+
+class ProductPicture(models.Model):
+    ingredient_name = models.ForeignKey(Ingredients, related_name='ProductPicture',on_delete=models.PROTECT)
+    picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/productPictures", null=True, blank=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.ingredient_name.name + " - " + self.ingredient_name.company_name.company_name
+
+class CompanyLogo(models.Model):
+    company_name = models.ForeignKey(Company, related_name='CompanyLogo',on_delete=models.PROTECT)
+    picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/CompanyLogos", blank=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.company_name.company_name

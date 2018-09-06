@@ -52,30 +52,33 @@ def ingredientList(request, pk):
 def companyDetails(request, pk, company_pk):
     
     company = get_object_or_404(Company, database__pk=pk, pk=company_pk)
-    addresses = company.companyAddress.get()
+    addresses = get_object_or_404(company.companyAddress)
     ingredients = company.Ingredients.all()
     categories = ingredients.order_by('category__category').values_list('category__category', flat=True).distinct()
-    
+    logos = get_object_or_404(company.CompanyLogo)
+
     context = {
        
        'company': company,
        'addresses': addresses,
        'categories': categories,
        'ingredients': ingredients,
+       'logos': logos,
     }
     return render(request, 'agrodata/companyDetails.html', context)
 
 def ingredientDetails(request, pk, ingredient_pk):
     
     ingredient = get_object_or_404(Ingredients, category__pk=pk, pk=ingredient_pk)
-    details = ingredient.IngredientDetail.get()
-    organoleptics = ingredient.ProductPhysicalProperty.get()
-
+    details = get_object_or_404(ingredient.IngredientDetail)
+    organoleptics = get_object_or_404(ingredient.ProductPhysicalProperty)
+    pictures = get_object_or_404(ingredient.ProductPicture)
 
     context = {
        
        'ingredient': ingredient,
        'details': details,
        'organoleptics': organoleptics,
+       'pictures': pictures,
     }
     return render(request, 'agrodata/ingredientDetails.html', context)
