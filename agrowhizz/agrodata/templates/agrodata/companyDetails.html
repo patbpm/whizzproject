@@ -15,15 +15,17 @@
         <div class="col-md-8 px-0">
             <h1 class="display-4 font-italic">{{ company.company_name }}</h1>
             <p class="lead my-3">{{ company.profile_description }}</p>
+            <hr>
             <div>
               <strong>Physical Address:</strong>
               <p> {{ addresses.location }}, {{ addresses.city }}, {{ addresses.state }}, {{ addresses.country }}, {{ addresses.postal_code }}</p>
             </div>
+            <hr>
             <div>
               <strong>Contats:</strong>
               <p> Tel: {{ addresses.telephone }}, Fax: {{ addresses.fax }}, Email: {{ addresses.email }}</p>
             </div>
-            <p></p>
+            <hr>
             <small>Website: <a href="{{ addresses.website }}" target="_blank">{{ addresses.website }}</a></small><br>
             <small>Twiiter: <a href="{{ addresses.twitter }}" target="_blank">{{ addresses.twitter }}</a></small><br>
             <small>Facebook: <a href="{{ addresses.facebook }}" target="_blank">{{ addresses.facebook  }}</a></small><br> 
@@ -79,10 +81,10 @@
                             
                               {% for category in categories %}
                               <!-- Accordion card -->
-                              <div class="card">
+                              <div class="card ">
                             
                                 <!-- Card header -->
-                                <div class="card-header" role="tab" id="headingTwo2">
+                                <div class="card-header shadow p-4 mb-2 rounded" role="tab" id="headingTwo2">
                                   <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#a{{ category }}" aria-expanded="false" aria-controls="collapseTwo2">
                                     <h5 class="mb-0">
                                         {{category}} <i class="fa fa-angle-down rotate-icon"></i>
