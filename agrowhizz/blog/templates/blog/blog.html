@@ -55,8 +55,8 @@ Blog
         <div>
             <h2 class="blog-post-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p class="blog-post-meta">{{ post.published_date }} by <a href="#">{{ post.author }}</a></p>
-            <p class="text-truncate">{{ post.text|linebreaksbr }}</p>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a  href="#">More Reading</a></button>
+            <p class="">{{ post.text|truncatechars:200 }}</p>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a  href="{% url 'post_detail' pk=post.pk %}">More Reading</a></button>
             
         </div>
         
