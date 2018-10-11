@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include
 from django.conf.urls import url
 from django.contrib import admin
+from django.urls import include, path
 
 from django.conf import settings
 from django.views.static import serve
@@ -28,6 +29,16 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     url(r'^agrodata/', include('agrodata.urls')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+        # For django versions before 2.0:
+        # url(r'^__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns
 
 if settings.DEBUG:
     urlpatterns += [
