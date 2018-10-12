@@ -13,7 +13,7 @@ class BoardListView(ListView):
     model = Board
     context_object_name = 'boards'
     template_name = 'boards/boards.html'
-
+    paginate_by = 10
 
 def board_topics(request, pk):
     board = Board.objects.get(pk=pk)
@@ -105,7 +105,7 @@ class TopicListView(ListView):
     model = Topic
     context_object_name = 'topics'
     template_name = 'boards/boardtopics.html'
-    paginate_by = 3
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         kwargs['board'] = self.board
