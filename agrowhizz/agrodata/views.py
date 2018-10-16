@@ -16,7 +16,8 @@ class CompanyCategoryListView(ListView):
     context_object_name = 'databases'
     template_name = 'agrodata/foodindustrydata.html'
     ordering = 'name'
-
+    
+    
 # view for all the food classification #    
 @method_decorator(login_required, name='dispatch')
 class FoodCategoryListView(ListView):

@@ -10,7 +10,7 @@ django.setup()
 import random
 from blog.models import Post
 from boards.models import Board, Topic, Post
-from agrodata.models import Database
+from agrodata.models import Database, Company, CompanyAddress, CompanyLogo
 from faker import Faker
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -134,7 +134,73 @@ def populateAgrodataDatabase(N):
                                                   description =fake_description)[0]
 
 
+# Populating Databas model in Agrodat App
+# ***************************************
 
+def populateAgrodataCompany(N):
+    '''
+    Create N Entries of Data Accessed
+    '''
+
+    database = Database.objects.all()
+    for entry in range(N):
+
+        def add_database():
+            t = Database.objects.get_or_create(name=random.choice(database))[0]
+            t.save()
+            return t
+
+        # Create Fake Data for Company entry
+        
+        fake_database = add_database()
+        fake_company_name= fakegen.company()
+        fake_profile_description= fakegen.text(max_nb_chars=90, ext_word_list=None)
+        fake_full_description= fakegen.text(max_nb_chars=600, ext_word_list=None)
+        last_updated = timezone.now()
+
+        # Create Fake Data for Company Address entry
+        fake_location = fakegen.street_address()
+        fake_city = fakegen.city()
+        fake_state = fakegen.state()
+        fake_country = fakegen.country()
+        fake_postal_code = fakegen.postcode()
+        fake_fax = fakegen.phone_number()
+        fake_telephone = fakegen.phone_number()
+        fake_website = fakegen.url()
+        fake_twitter = fakegen.url()
+        fake_facebook  = fakegen.url()
+        fake_linkedin = fakegen.url()
+        fake_email = fakegen.ascii_free_email()
+
+        # Create Fake Data for Company Logo entry
+        fake_picture = fakegen.image_url(width=None, height=None)
+
+        # Create new Company for Entry
+        company = Company.objects.get_or_create(company_name = fake_company_name,
+                                                profile_description = fake_profile_description,
+                                                full_description = fake_profile_description,
+                                                database = fake_database,
+                                                last_updated = last_updated)[0]
+
+        # Create new Company Address for Entry
+        companyAddress = CompanyAddress.objects.get_or_create(  company_name = company,
+                                                                location = fake_location,
+                                                                city = fake_city,
+                                                                state = fake_state,
+                                                                country = fake_country,
+                                                                postal_code = fake_postal_code,
+                                                                fax = fake_fax,
+                                                                telephone = fake_telephone,
+                                                                website = fake_website,
+                                                                twitter = fake_twitter,
+                                                                facebook  = fake_facebook,
+                                                                linkedin = fake_linkedin,
+                                                                email = fake_email,
+                                                                last_updated = last_updated)[0]
+        # Create new Company Logo for Entry
+        companyLogo = CompanyLogo.objects.get_or_create(company_name = company,
+                                                picture = fake_picture,
+                                                uploaded_at = last_updated)[0]
 
 if __name__ == '__main__':
     
@@ -175,6 +241,14 @@ if __name__ == '__main__':
     if value == "y":
         populateAgrodataDatabase(int(input("How many Agrodata Database you want to create? ")))
         print('Populating Agrodata Database Complete')
+        print('')
+        print('*************************************')
+    
+    print("The Agrodata Company contains {} data".format(len(Company.objects.all())))
+    value = input("Would you like to add more data? (y/n) ")
+    if value == "y":
+        populateAgrodataCompany(int(input("How many Agrodata Company you want to create? ")))
+        print('Populating Agrodata Company Complete')
         print('')
         print('*************************************')
 

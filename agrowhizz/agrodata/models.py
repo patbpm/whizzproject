@@ -12,7 +12,7 @@ class Database(models.Model):
     def __str__(self):
         return self.name
 
-
+ 
 # Database for all Food Industry #
 class Company(models.Model):
     company_name = models.CharField(max_length=100, unique=True)
@@ -33,8 +33,8 @@ class CompanyAddress(models.Model):
     state = models.CharField(max_length=25)
     country = models.CharField(max_length=25)
     postal_code = models.CharField(max_length=6)
-    fax= models.CharField(max_length=15, null=True, blank=True)
-    telephone = models.CharField(max_length=15)
+    fax= models.CharField(max_length=50, null=True, blank=True)
+    telephone = models.CharField(max_length=50)
     website = models.URLField(null=True, blank=True)
     twitter = models.URLField(null=True, blank=True)
     facebook = models.URLField(null=True, blank=True)
