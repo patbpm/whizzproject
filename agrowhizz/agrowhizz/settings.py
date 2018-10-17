@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'debug_toolbar',    
     'django.contrib.humanize',
     'widget_tweaks',
+    'imagekit',
     'home',
     'blog',
     'boards',

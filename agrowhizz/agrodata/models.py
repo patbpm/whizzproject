@@ -98,7 +98,7 @@ class ProductPicture(models.Model):
 
 class CompanyLogo(models.Model):
     company_name = models.ForeignKey(Company, related_name='CompanyLogo',on_delete=models.PROTECT, unique=True)
-    picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/CompanyLogos", null=True, blank=True)
+    picture = models.ImageField(verbose_name=u'Image', upload_to="uploads/CompanyLogos", default= 'uploads/CompanyLogos/noimage.png', null=True, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):

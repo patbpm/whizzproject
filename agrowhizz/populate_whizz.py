@@ -11,6 +11,7 @@ import random
 from blog.models import Post
 from boards.models import Board, Topic, Post
 from agrodata.models import Database, Company, CompanyAddress, CompanyLogo
+from agrodata.models import IngredientsCategories, Ingredients, IngredientDetail, ProductPhysicalProperty, ProductPicture
 from faker import Faker
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -134,7 +135,7 @@ def populateAgrodataDatabase(N):
                                                   description =fake_description)[0]
 
 
-# Populating Databas model in Agrodat App
+# Populating Company model in Agrodat App
 # ***************************************
 
 def populateAgrodataCompany(N):
@@ -155,7 +156,7 @@ def populateAgrodataCompany(N):
         fake_database = add_database()
         fake_company_name= fakegen.company()
         fake_profile_description= fakegen.text(max_nb_chars=90, ext_word_list=None)
-        fake_full_description= fakegen.text(max_nb_chars=600, ext_word_list=None)
+        fake_full_description= fakegen.text(max_nb_chars=1500, ext_word_list=None)
         last_updated = timezone.now()
 
         # Create Fake Data for Company Address entry
@@ -173,12 +174,12 @@ def populateAgrodataCompany(N):
         fake_email = fakegen.ascii_free_email()
 
         # Create Fake Data for Company Logo entry
-        fake_picture = fakegen.image_url(width=None, height=None)
+        fake_picture = '/media/uploads/CompanyLogos/noimage_AhFphmJ.png'
 
         # Create new Company for Entry
         company = Company.objects.get_or_create(company_name = fake_company_name,
                                                 profile_description = fake_profile_description,
-                                                full_description = fake_profile_description,
+                                                full_description = fake_full_description,
                                                 database = fake_database,
                                                 last_updated = last_updated)[0]
 
@@ -201,6 +202,95 @@ def populateAgrodataCompany(N):
         companyLogo = CompanyLogo.objects.get_or_create(company_name = company,
                                                 picture = fake_picture,
                                                 uploaded_at = last_updated)[0]
+
+# Populating IngredientsCategories model in Agrodat App
+# ***************************************
+
+def populateAgrodataIngredientsCategories(N):
+    '''
+    Create N Entries of Dates Accessed
+    '''
+
+    for entry in range(N):
+
+        # Create Fake Data for entry
+        fake_category = fakegen.text(max_nb_chars=15, ext_word_list=None)
+        
+        
+        # Create new IngredientsCategories Entry
+        ingredientsCategories = IngredientsCategories.objects.get_or_create(category= fake_category)[0]
+
+
+# Populating Ingredients model in Agrodat App
+# ***************************************
+
+def populateAgrodataIngredients(N):
+    '''
+    Create N Entries of Data Accessed
+    '''
+    company = Company.objects.all()
+    ingredientsCategories = IngredientsCategories.objects.all()
+    for entry in range(N):
+
+        def add_ingredients():
+            t = IngredientsCategories.objects.get_or_create(category=random.choice(ingredientsCategories))[0]
+            t.save()
+            return t
+        
+        def add_company():
+            t = Company.objects.get_or_create(company_name=random.choice(company))[0]
+            t.save()
+            return t
+
+        # Create Fake Data for Ingredients entry
+        fake_name = fakegen.text(max_nb_chars=15, ext_word_list=None)
+        fake_category = add_ingredients()
+        fake_company_name = add_company()
+        fake_product_code = fakegen.hexify(text="^^^^", upper=False)
+        last_updated = timezone.now()
+
+        # Create Fake Data for IngredientDetail entry
+        fake_declaration = fakegen.text(max_nb_chars=150, ext_word_list=None)
+        fake_usage = fakegen.text(max_nb_chars=150, ext_word_list=None)
+        fake_full_description = fakegen.text(max_nb_chars=1500, ext_word_list=None)
+
+        # Create Fake Data for ProductPhysicalProperty entry
+        fake_appearance = fakegen.text(max_nb_chars=150, ext_word_list=None)
+        fake_Colour = fakegen.text(max_nb_chars=150, ext_word_list=None)
+        fake_Taste = fakegen.text(max_nb_chars=150, ext_word_list=None)
+        fake_Flavour = fakegen.text(max_nb_chars=150, ext_word_list=None)
+
+        # Create Fake Data for ProductPicture entry
+        fake_picture = '/media/uploads/CompanyLogos/noimage_AhFphmJ.png'
+
+        # Create new Ingredients for Entry
+        ingredient = Ingredients.objects.get_or_create( name = fake_name,
+                                                        category = fake_category,
+                                                        company_name = fake_company_name,
+                                                        product_code= fake_product_code,
+                                                        last_updated = last_updated)[0]
+        
+        # Create new IngredientDetail for Entry
+        ingredientDetail = IngredientDetail.objects.get_or_create(  ingredient_name = ingredient,
+                                                                    declaration= fake_declaration,
+                                                                    usage= fake_usage,
+                                                                    full_description = fake_full_description)[0]
+
+
+        # Create new ProductPhysicalProperty for Entry
+        productPhysicalProperty = ProductPhysicalProperty.objects.get_or_create(ingredient_name = ingredient,
+                                                                                appearance = fake_appearance,
+                                                                                Colour = fake_Colour,
+                                                                                Taste = fake_Taste,
+                                                                                Flavour = fake_Flavour)[0]
+
+        
+        # Create new ProductPicture for Entry
+        productPicture = ProductPicture.objects.get_or_create(ingredient_name = ingredient,
+                                                              picture = fake_picture,
+                                                              uploaded_at = last_updated)[0]
+
+
 
 if __name__ == '__main__':
     
@@ -249,6 +339,22 @@ if __name__ == '__main__':
     if value == "y":
         populateAgrodataCompany(int(input("How many Agrodata Company you want to create? ")))
         print('Populating Agrodata Company Complete')
+        print('')
+        print('*************************************')
+    
+    print("The Agrodata ingredientsCategories contains {} data".format(len(IngredientsCategories.objects.all())))
+    value = input("Would you like to add more data? (y/n) ")
+    if value == "y":
+        populateAgrodataIngredientsCategories(int(input("How many Agrodata IngredientsCategories you want to create? ")))
+        print('Populating Agrodata IngredientsCategories Complete')
+        print('')
+        print('*************************************')
+    
+    print("The Agrodata ingredients contains {} data".format(len(Ingredients.objects.all())))
+    value = input("Would you like to add more data? (y/n) ")
+    if value == "y":
+        populateAgrodataIngredients(int(input("How many Agrodata Ingredients you want to create? ")))
+        print('Populating Agrodata Ingredients Complete')
         print('')
         print('*************************************')
 
