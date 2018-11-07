@@ -20,7 +20,7 @@ class Company(models.Model):
     full_description = models.TextField(null=True)
     database = models.ForeignKey(Database, related_name='companies',on_delete=models.PROTECT)
     last_updated = models.DateTimeField(auto_now_add=True)
-    
+     
     
     def __str__(self):
         return self.company_name
