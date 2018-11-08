@@ -73,3 +73,17 @@
       <a href="https://www.thefoodsafetynetwork.co.za/about-us"><strong>FROM THIS LINK</strong> </a>
     </div>
   </div>
+
+
+  <!-- NAV DROPDOWN FOR PRODUCR -->
+
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href={% url 'whatWeServe'%} id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      PRODUCT
+    </a >
+    <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href={% url 'agrodata'%}>Database</a>
+      <a class="dropdown-item" href="#">Training</a>
+      <a class="dropdown-item" href="#">Consulting</a>
+    </div>
+  </li>

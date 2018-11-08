@@ -26,6 +26,10 @@ header nav {
  background-color: #2e4436;
 }
 
+#mainmenu {
+  background-color: greenyellow;
+}
+
 /* Footer
 ----------------------------------------------------*/
 
@@ -86,6 +90,7 @@ header nav {
   line-height: 1;
   letter-spacing: -.05rem;
 }
+
 
 /* BLOG
 ------------------------- */
@@ -237,3 +242,5 @@ header nav {
     font-size: 3rem;
   }
 }
+
+
