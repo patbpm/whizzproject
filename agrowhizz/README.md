@@ -6,27 +6,33 @@ The goal is to allow food science and food technology discussion
 
 First, clone the repository to your local machine:
 
-git clone https://github.com/patbpm/whizzproject.git
+    git clone https://github.com/patbpm/whizzproject.git
 
-Install the requirements:
+create and start a a virtual environment
+    python -m venv myvenv
 
-pip install -r requirements.txt
+Install the project dependencies:
+
+    pip install -r requirements.txt
 
 Setup the local configurations:
 
 cp .env.example .env
 
 Set up the database:
- Dowload XAMP
- 
+ Download XAMP
+
 
 
 Create Migration
 python manage.py migrate
 
+Create a new superuser for the admin
+    python manage.py createsuperuser
+
 Finally, run the development server:
 
-python manage.py runserver
+    python manage.py runserver
 
 The project will be available at 127.0.0.1:8000.
 
