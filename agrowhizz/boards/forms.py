@@ -2,6 +2,7 @@ from django import forms
 from .models import Topic
 from .models import Post
 
+# form for the New Topic.
 class NewTopicForm(forms.ModelForm):
     message = forms.CharField(
         widget=forms.Textarea(
@@ -15,6 +16,7 @@ class NewTopicForm(forms.ModelForm):
         model = Topic
         fields = ['subject', 'message']
 
+# form for the Post.
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
