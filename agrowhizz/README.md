@@ -1,10 +1,8 @@
 # FOOD TECH WEBSITE 
-===================
 
 The goal is to allow food science and food technology discussion
 
 # Running the Project Locally
-=============================
 
 ## First, clone the repository to your local machine:
 
@@ -46,7 +44,8 @@ The goal is to allow food science and food technology discussion
     * Click on the + icon in the terminal window
 
  2. How to install XAMPP
-    look at this [Link] (https://pureinfotech.com/install-xampp-windows-10/) and at this [Link](https://www.apachefriends.org/download.html)
+    look at this [Link](https://pureinfotech.com/install-xampp-windows-10/) 
+    and at this [Link](https://www.apachefriends.org/download.html)
 
  3. Use Python Decouple
     * pip install python-decouple

@@ -18,6 +18,7 @@ from django.utils import timezone
 
 fakegen = Faker()
 
+# Create Fake Data for the blog App
 def populateBlog(N):
     '''
     Create N Entries of Dates Accessed
@@ -41,6 +42,8 @@ def populateBlog(N):
                                           published_date =published_date)[0]
 
 
+# Create Fake Data for the board App
+# *************************************************
 def populateBoard(N):
     '''
     Create N Entries of Dates Accessed
@@ -53,12 +56,12 @@ def populateBoard(N):
         fake_description= fakegen.text(max_nb_chars=40, ext_word_list=None)
         
 
-        # Create new Post Entry
+        # Create new board Entry
         board = Board.objects.get_or_create(name= fake_name,
                                           description =fake_description)[0]
 
 
-
+# Create Fake Data for the board App of The Board topic
 def populateBoardTopic(N):
     '''
     Create N Entries of Dates Accessed
@@ -84,6 +87,7 @@ def populateBoardTopic(N):
                                           board = fake_board,
                                           starter = fake_starter)[0]
 
+# Create Fake Data for the board App of The Board post
 def populateBoardPost(N):
     '''
     Create N Entries of Dates Accessed
@@ -115,8 +119,8 @@ def populateBoardPost(N):
                                           updated_by = updated_by)[0]
 
 
-# Populating Databas model in Agrodat App
-# ***************************************
+# Populating Databas model in Agrodata App
+# *************************************************
 
 def populateAgrodataDatabase(N):
     '''
@@ -135,8 +139,7 @@ def populateAgrodataDatabase(N):
                                                   description =fake_description)[0]
 
 
-# Populating Company model in Agrodat App
-# ***************************************
+# Populating Company model in Agrodat App for company
 
 def populateAgrodataCompany(N):
     '''
@@ -204,7 +207,6 @@ def populateAgrodataCompany(N):
                                                 uploaded_at = last_updated)[0]
 
 # Populating IngredientsCategories model in Agrodat App
-# ***************************************
 
 def populateAgrodataIngredientsCategories(N):
     '''
@@ -222,7 +224,6 @@ def populateAgrodataIngredientsCategories(N):
 
 
 # Populating Ingredients model in Agrodat App
-# ***************************************
 
 def populateAgrodataIngredients(N):
     '''
